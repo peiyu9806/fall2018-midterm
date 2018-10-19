@@ -10,7 +10,11 @@ Date: 10-18-18
 
 using namespace std;
 
-
+/**
+   Will prompt the user for a string return it
+   @param prompt the string the user entered
+   @return the string
+*/
 string get_string(string prompt)
 {
     string s;
@@ -20,7 +24,12 @@ string get_string(string prompt)
 
 }
 
-
+/**
+   Will calculate the counts of the given character appeares in the string
+   @param s the string
+   @param c the character
+   @return the number of counts
+*/
 int char_count(string s, char c)
 {
     int count = 0;
@@ -40,11 +49,11 @@ int char_count(string s, char c)
 int main ()
 {   
     char character;
-    string g_strings = get_string("enter something");
-    cout << "enter the character ";
+    string gv_strings = get_string("Please enter a string: ");
+    cout << "Please enter a character: ";
     cin >> character;
 
-    cout << "The number is " << char_count(g_strings, character) << endl;
+    cout << "The number is " << char_count(gv_strings, character) << endl;
 
     return 0;
 }
