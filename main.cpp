@@ -7,6 +7,7 @@ Date: 10-18-18
 
 #include <iostream>
 #include <string>
+#include <cctype>
 
 using namespace std;
 
@@ -21,7 +22,6 @@ string get_string(string prompt)
     cout << prompt;
     getline(cin,s);
     return s;
-
 }
 
 /**
@@ -36,7 +36,6 @@ int char_count(string s, char c)
     for(int i = 0; i < s.length(); i++)
     {
         char ch = s.at(i);
-
         if(ch == c)
         {
             count ++;
@@ -45,15 +44,19 @@ int char_count(string s, char c)
     return count;
 }
 
-
 int main ()
 {   
-    char character;
-    string gv_strings = get_string("Please enter a string: ");
+    string gv_strings = get_string("Please enter a string: ");      // Assign gv_string as the string the user entered.
+    char character;         // Prompt the user for the character to test.
     cout << "Please enter a character: ";
     cin >> character;
 
-    cout << "The number is " << char_count(gv_strings, character) << endl;
+    for(int i=0;i < gv_strings.length(); i++)       // Make all the English letters the user entered become lowercase.
+    {
+        gv_strings[i] = towlower(gv_strings[i]);
+    }
+   
+    cout << "The number is " << char_count(gv_strings, character) << endl;      // print the result.
 
     return 0;
 }
