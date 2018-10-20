@@ -56,7 +56,7 @@ int main ()
         gv_strings[i] = towlower(gv_strings[i]);
     }
    
-    cout << "The number is " << char_count(gv_strings, character) << endl;      // print the result.
+    cout << "The count number of the character \"" << character << "\" is: " << char_count(gv_strings, character) << endl;      // print the result.
 
     return 0;
 }
